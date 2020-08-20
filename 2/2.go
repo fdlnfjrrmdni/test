@@ -40,15 +40,15 @@ func findMissingNumber(str string) int {
 		fail := false
 
 		// Find subsequent numbers with previous number as n 
-		for i:=m; i!=len(str); i += 1 + int(math.Log10(float64(n))) { 				///OOOOOOOOOOOO
+		for i:=m; i!=len(str); i += 1 + int(math.Log10(float64(n))) {
 			// If we haven't yet found the missing number 
 			// for current length. Next number is n+2. Note 
 			// that we use Log10 as (n+2) may have more 
 			// length than n. 
-			if ((missingNo == -1) && (getValue(str, i, 1+int(math.Log10(float64(n)+2.))) == n+2)) { 			///OOOOOOOOOOOO
+			if ((missingNo == -1) && (getValue(str, i, 1+int(math.Log10(float64(n)+2.))) == n+2)) {
 				missingNo = n + 1
 				n += 2
-			}else if (getValue(str, i, 1+int(math.Log10(float64(n)+1.))) == n+1) {	// If next value is (n+1) 		///OOOOOOOOOOOO
+			}else if (getValue(str, i, 1+int(math.Log10(float64(n)+1.))) == n+1) {	// If next value is (n+1)
 				n++
 			}else { 
 				fail = true
